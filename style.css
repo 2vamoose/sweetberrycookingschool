@@ -1,0 +1,67 @@
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+/* Specifies the behavior of the 'width' and 'height' of properties */
+
+h1, h2, h3, h4, h5 {
+    font-family: Roboto sans-serif;
+}
+
+p, a {
+    font-family: Roboto sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 5px; 
+    grid-template: repeat (5, auto) / repeat (3, auto);
+    grid-template-areas: 
+      "header header header"
+      "banner banner"
+      "card-container card-container"
+      "footer footer footer";
+    border: 1px dashed #1E96FF;
+}
+
+.header {
+  display: grid;
+  grid-column: 1/-1;
+  background-color: #F5F3EF;
+  border: 1px dashed #1E96FF;
+}
+
+.nav-links {
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  color: black;
+  text-decoration: none;
+}
+
+.banner{
+  display: grid;
+  
+}
+.banner img{
+  width: 60%;
+  height: 60%;
+}
+
+.class-container {
+  display: grid;
+  grid-template: auto / repeat (3, auto)
+}
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20%  
+  padding: 20px;  
+  background-color: #FEB802F
+  border: 1px dashed #1E96FF;
+}
