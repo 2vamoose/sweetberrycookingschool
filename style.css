@@ -6,69 +6,105 @@
 /* Specifies the behavior of the 'width' and 'height' of properties */
 
 body {
-    font-family: Roboto sans-serif;
+  font-family: 'Roboto', serif;
 }
 
 p {
-    font-family: Roboto sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .grid-container {
     display: grid;
     background-color: #F5F3EF;
     grid-gap: 5px; 
-    grid-template: repeat (10, auto) / repeat (3, auto);
+    grid-template-rows: 80px auto auto 80px;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
       "header header header"
-      "banner banner"
-      "card-container card-container"
+      "banner banner banner"
+      "card-container card-container card-container"
       "footer footer footer";
-    border: 1px dashed #1E96FF;
 }
 
-header {
+.nav-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  grid-area: header;
+  width: 100%;
+  padding: 40px;
+}
+
+.header-links{
+  display: flex;
+  gap: 20px;
+  width: 20%;
+}
+
+
+.header-button {
+  padding: 15px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 15px; 
+  font-weight: bold;
+  cursor: pointer;
 }
 
 a {
   text-decoration: none;
   color: black;
+  border: none;
 }
 
 .banner-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: 1px dashed pink; 
+  grid-area: banner;
+  padding: 30px;
 }
 
-.banner img {
-  display: grid;
-  justify-content: end;
-  width: 60%;
-  height: 60%;
-  border: 1px dashed green; 
-}
-
-main {
+.banner-text {
   display: flex;
-  justify-content: center;
-  border: 2px dashed red; 
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.tagline {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.description {
+  padding-top: 5%;
+  padding-right: 15%;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+}
+
+.banner-container img {
+  width:100%;
 }
 
 .card-container {
   display: grid;
-  grid-template: auto / repeat (3, auto);
-  grid-template-areas: 
-  "class-starter class-1 class-2"
-  "class-3 class-4 class-5";
-  gap: 20px 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 10px;
+  grid-area: card-container;
+  padding: 30px;
 }
 
 .class-starter {
   display: grid;
   gap: 5px 10px; 
+  padding: 15px;
+  background-color: #FEBD2F;
+  border-radius: 16px;
+  width: 90%;
+  padding: 10%;
+  font-size: 25px;
 }
 
 h4 {
@@ -83,20 +119,50 @@ h4 {
   grid-area: button;
 }
 
-.class-1, 
-.class-2,
-.class-3, 
-.class-4, 
-.class-5 {
-  display: grid;
-  grid-template-columns: 125px 125px;
-  grid-template-rows: 100px 100px;
-  grid-template-areas:
-  "image image"
-  "name name"
-  "description description"
-  "button button";
-  gap: 5px 10px;
+.class{
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  width: 90%;
+  padding:10%;
+  position: relative;
+ 
+}
+.course{
+  display: flex;
+  justify-content: flex-start;
+  font-weight: bold;
+} 
+
+.detail {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-size: small;
+}
+
+.card-icon{
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  right: 0;
+  top: -20px;
+}
+
+.card-icon img{
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  width: 40%;
+  justify-content: center;
+  border-radius: 16px;
+  border: 1px solid lightgray; 
+  font-family: "Roboto", sans-serif;
+  font-size: small;
+  cursor: pointer;
+  padding: 3%;
 }
 
 .footer {
@@ -106,9 +172,17 @@ h4 {
   justify-content: center;
   align-items: center;
   background-color: #FEBD2F;
-  height: 80px;
-  width: 1440px;
-  padding-top: 10%;
-  padding-bottom: 10%;
-  border: 1px dashed #1E96FF;
+}
+
+@media (max-width: 768px) {
+.grid-container {
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: 1/-1;
+  }
+}
+
+@media (max-width: 468px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    }
 }
