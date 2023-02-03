@@ -70,18 +70,23 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  width: 90%;
+  /* margin-inline: auto; */
 }
 
 .tagline {
   font-size: 50px;
   font-weight: bold;
+  line-height: 42px;
 }
 
 .description {
   padding-top: 5%;
-  padding-right: 15%;
+  padding-right: 20%;
   font-size: 15px;
   font-family: "Roboto", sans-serif;
+  justify-content: center;
+  line-height: 25px;
 }
 
 .banner-container img {
@@ -105,6 +110,7 @@ a {
   width: 90%;
   padding: 10%;
   font-size: 25px;
+  justify-self: center;
 }
 
 h4 {
@@ -127,7 +133,8 @@ h4 {
   width: 90%;
   padding:10%;
   position: relative;
- 
+  justify-content: space-between;
+ justify-self: center;
 }
 .course{
   display: flex;
@@ -146,7 +153,7 @@ h4 {
   height: 60px;
   position: absolute;
   right: 0;
-  top: -20px;
+  top: -10%;
 }
 
 .card-icon img{
@@ -174,15 +181,70 @@ h4 {
   background-color: #FEBD2F;
 }
 
+
+
 @media (max-width: 768px) {
 .grid-container {
   grid-template-columns: repeat(2, 1fr);
-  grid-column: 1/-1;
+  /* grid-template-rows: 80px auto auto auto 80px; */
   }
-}
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .banner-container {
+    grid-template-columns: 1fr;
+  }
+  }
+  
+  .hamburger {
+    display: none;
+  }
 
 @media (max-width: 468px) {
   .grid-container {
     grid-template-columns: 1fr;
     }
+
+    .card-container {
+      grid-template-columns:  1fr;
+    }
+
+    .hamburger{
+      display: block;
+    }
+
+    .header-button{
+      display: none;
+    }
+
+    .header-links{
+      flex-direction: column;
+      transform: translate(450%,100%);
+    }
+
+    .tagline {
+      font-size: 50px;
+      font-weight: bold;
+      line-height: 42px;
+    }
+
+    .description {
+      display: flex;
+      padding-top: 5%;
+      padding-bottom: 5%;
+      font-size: 15px;
+      font-family: "Roboto", sans-serif;
+      line-height: 25px;
+    }
+
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
 }
