@@ -1,3 +1,4 @@
+/* Great work on implementing font but you didn't implement the second font that was given in the Figma file */
 * {
     margin: 0; 
     padding: 0; 
@@ -66,6 +67,8 @@ a {
   padding: 30px;
 }
 
+/* To make this look better on mobile devices, on the mobile media query remove the width:90%; so that it takes the full screen.
+And add text-align:center to align the text center. */
 .banner-text {
   display: flex;
   flex-direction: column;
@@ -217,6 +220,7 @@ h4 {
       display: none;
     }
 
+    /* Seems like you did a lot of progress for building a functional hamburger menu but on mobile device sizes I see the hamburger icon but the nav items are shown and doesn’t get toggled. Needs improvement. */
     .header-links{
       flex-direction: column;
       transform: translate(450%,100%);
@@ -248,3 +252,5 @@ h4 {
   transition: all 0.3s ease-in-out;
   background-color: #101010;
 }
+
+/* Overall, great work! You are doing good. Keep it up! 👏 */
